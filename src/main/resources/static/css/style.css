@@ -1,0 +1,9 @@
+.my-text-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.my-curser {
+    cursor: pointer;
+}
