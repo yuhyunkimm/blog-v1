@@ -12,12 +12,12 @@ import org.springframework.test.web.servlet.ResultActions;
 
 @WebMvcTest(UserController.class)
 public class UserControllerTest {
-
     @Autowired
     private MockMvc mvc;
 
     @Test
     public void join_test() throws Exception {
+
         String requestBody = "username=ssar&password=1234&email=ssar@nate.com";
 
         ResultActions resultActions = mvc.perform(post("/join").content(requestBody)
