@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import shop.mtcoding.blogv1.dto.user.userReq.JoinReqDto;
-import shop.mtcoding.blogv1.dto.user.userReq.LoginReqDto;
+import shop.mtcoding.blogv1.dto.user.UserReq.JoinReqDto;
+import shop.mtcoding.blogv1.dto.user.UserReq.LoginReqDto;
 import shop.mtcoding.blogv1.handler.ex.CustomException;
 import shop.mtcoding.blogv1.model.User;
 import shop.mtcoding.blogv1.model.UserRepository;
