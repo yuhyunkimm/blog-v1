@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import shop.mtcoding.blogv1.dto.board.BoardReq.BoardMainRespDto;
+import shop.mtcoding.blogv1.dto.board.BoardResp.BoardMainRespDto;
 
 @MybatisTest
 public class BoardRepositoryTest {
