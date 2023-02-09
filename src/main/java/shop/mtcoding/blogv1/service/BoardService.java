@@ -18,11 +18,11 @@ public class BoardService {
 
     @Transactional
     public void 글쓰기(BoardSaveReqDto boadSaveReqDto, int useId) {
+        String thumbnail = "";
 
         int result = boardRepository.insert(boadSaveReqDto.getTitle(), boadSaveReqDto.getContent(), thumbnail, useId);
 
-        result = boardRepository.insert(boadSaveReqDto.getTitle(), boadSaveReqDto.getContent(), thumbnail,
-                useId);
+        result = boardRepository.insert(boadSaveReqDto.getTitle(), boadSaveReqDto.getContent(), thumbnail, useId);
         if (result != 1) {
             throw new CustomException("글쓰기 실패", HttpStatus.INTERNAL_SERVER_ERROR);
         }
