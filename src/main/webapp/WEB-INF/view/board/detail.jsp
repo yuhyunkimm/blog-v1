@@ -55,5 +55,19 @@
                 </ul>
             </div>
         </div>
+         <script>
+                function deleteById(id) {
+                    $.ajax({
+                        type: "delete",
+                        url: "/board/" + id,
+                        dataType: "jason"
+                    }).done((res) => {
+                        alert(res.msg);
+                        location.href = "/";
+                    }).fail((err) => {
+                        alert(err.responseJSON.msg);
 
+                    });
+                }
+            </script>
         <%@ include file="../layout/footer.jsp" %>
