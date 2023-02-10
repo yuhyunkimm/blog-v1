@@ -25,8 +25,7 @@ public interface BoardRepository {
                         @Param("thumbnail") String thumbnail,
                         @Param("userId") int userId);
 
-        public int updateById(@Param("id") int id, @Param("title") String title, @Param("thumbnail") String thumbnail,
-                        @Param("content") String content);
+        public int updateById(@Param("id") int id, @Param("title") String title, @Param("thumbnail") String thumbnail);
 
         public int deleteById(int id);
 }
