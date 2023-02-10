@@ -41,7 +41,7 @@ public class BoardController {
             throw new CustomApiException("인증이 되지 않았습니다", HttpStatus.UNAUTHORIZED);
         }
 
-        boardService.게시글삭제(id, principal.getId());
+        // boardService.게시글삭제(id, principal.getId());
 
         return new ResponseEntity<>(new ResponsDto<>(1, "삭제성공", null), HttpStatus.OK);
 

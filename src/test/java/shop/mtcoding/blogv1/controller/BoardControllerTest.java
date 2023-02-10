@@ -1,6 +1,8 @@
 package shop.mtcoding.blogv1.controller;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.sql.Timestamp;
@@ -16,9 +18,11 @@ import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
+import org.springframework.transaction.annotation.Transactional;
 
 import shop.mtcoding.blogv1.model.User;
 
+@Transactional
 @AutoConfigureMockMvc
 @SpringBootTest(webEnvironment = WebEnvironment.MOCK)
 public class BoardControllerTest {
@@ -60,5 +64,15 @@ public class BoardControllerTest {
                         .session(mockSession));
 
         resultActions.andExpect(status().is3xxRedirection());
+    }
+
+    @Test
+    public void delete_test() throws Exception {
+        int id = 1;
+
+        ResultActions resultActions = mvc.perform(delete("/board/" + id).session(mockSession));
+        String reponseBody = resultActions.andReturn().getResponse().getContentAsString(null);
+        System.out.println("테스트 : " + reponseBody);
+
     }
 }
